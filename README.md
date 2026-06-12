@@ -40,25 +40,39 @@ The engine analyzes a user's book collection and compares it against a catalogue
 
 ```txt
 book-recommendation-engine/
-├─ app/
-│  ├─ __init__.py
-│  ├─ main.py
-│  ├─ recommender.py
-│  └─ recommendation_service.py
-├─ scripts/
-│  ├─ __init__.py
-│  ├─ check_supabase_connection.py
-│  ├─ check_user_books.py
-│  ├─ demo_similar_books.py
-│  ├─ generate_for_all_users.py
-│  └─ verify_user_recommendations.py
-├─ .env.example
-├─ .gitignore
-├─ Procfile
-├─ README.md
-├─ LICENSE
-└─ requirements.txt
+|-- app/
+|   |-- __init__.py
+|   |-- main.py
+|   |-- recommender.py
+|   `-- recommendation_service.py
+|-- scripts/
+|   |-- __init__.py
+|   |-- check_supabase_connection.py
+|   |-- check_user_books.py
+|   |-- demo_similar_books.py
+|   |-- generate_for_all_users.py
+|   `-- verify_user_recommendations.py
+|-- .env.example
+|-- .gitignore
+|-- LICENSE
+|-- Procfile
+|-- README.md
+`-- requirements.txt
 ```
+
+Key files:
+
+* `app/main.py`
+* `app/recommender.py`
+* `app/recommendation_service.py`
+* `scripts/check_supabase_connection.py`
+* `scripts/check_user_books.py`
+* `scripts/demo_similar_books.py`
+* `scripts/generate_for_all_users.py`
+* `scripts/verify_user_recommendations.py`
+* `.env.example`
+* `requirements.txt`
+* `LICENSE`
 
 ## How It Works
 
@@ -207,8 +221,9 @@ Example response:
 
 ```json
 {
-  "status": "ok",
-  "service": "book-recommendation-engine"
+  "success": true,
+  "service": "book-recommendation-engine",
+  "status": "healthy"
 }
 ```
 
@@ -239,7 +254,9 @@ Example response:
 {
   "success": true,
   "user_id": "example-user-id",
-  "recommendations_saved": 10
+  "generated_count": 10,
+  "message": "Recommendations generated and saved successfully.",
+  "recommendations": []
 }
 ```
 

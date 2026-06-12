@@ -50,7 +50,7 @@ def main():
         print("Connected, but no books were returned.")
         print("This usually means one of these:")
         print("- The table is empty")
-        print("- Your Supabase key does not have permission")
+        print("- Your Supabase service role key does not have permission")
         print("- RLS is blocking the request")
         return
 
