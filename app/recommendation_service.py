@@ -25,7 +25,7 @@ def get_supabase_client() -> Client:
     load_dotenv()
 
     supabase_url = get_required_env("SUPABASE_URL")
-    supabase_key = get_required_env("SUPABASE_KEY")
+    supabase_key = get_required_env("SUPABASE_SERVICE_ROLE_KEY")
 
     return create_client(supabase_url, supabase_key)
 

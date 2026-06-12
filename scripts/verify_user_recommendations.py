@@ -24,7 +24,7 @@ def get_supabase_client() -> Client:
     load_dotenv()
 
     supabase_url = get_required_env("SUPABASE_URL")
-    supabase_key = get_required_env("SUPABASE_KEY")
+    supabase_key = get_required_env("SUPABASE_SERVICE_ROLE_KEY")
 
     return create_client(supabase_url, supabase_key)
 
@@ -66,7 +66,7 @@ def main() -> None:
     print("Book Per-User Recommendation Verifier")
     print("--------------------------------------------")
 
-    user_id = input("Paste the SECOND account Supabase user_id: ").strip()
+    user_id = input("Paste the Supabase user_id: ").strip()
 
     if not user_id:
         print("No user_id provided. Exiting.")
@@ -110,7 +110,7 @@ def main() -> None:
         print()
 
     print("Verification complete.")
-    print("Now open the app with this same account and refresh the Library tab.")
+    print("Now check your recommendations table or connected client app.")
 
 
 if __name__ == "__main__":

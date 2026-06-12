@@ -85,8 +85,8 @@ def generate_recommendations(
             "recommendations": recommendations,
         }
 
-    except Exception as error:
+    except Exception:
         raise HTTPException(
             status_code=500,
-            detail=str(error),
+            detail="Failed to generate recommendations.",
         )
